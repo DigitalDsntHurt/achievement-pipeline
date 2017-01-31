@@ -6,11 +6,8 @@ key = ENV["TRELLO_API_KEY"]
 token = ENV["TRELLO_API_TOKEN"]
 
 
-scheduler.in '5s' do
-#scheduler.cron '5 5 * * *' do
-
-	p key
-	p token
+#scheduler.in '5s' do
+scheduler.cron '5 5 * * *' do
 
 	use_date = ""
 	date = Date.today#.next_day
@@ -93,7 +90,7 @@ scheduler.in '5s' do
 
 	end #TRELLO::CLIENT
 
-
+puts "Scheduler executed at #{Time.now}"
 end #SCHEDULER
 
 
